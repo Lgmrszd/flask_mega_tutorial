@@ -31,6 +31,7 @@ def login():
 def coder():
     form = CoderForm()
     if form.validate_on_submit():
+        print("CODER", form.text_data.data, form.coders.data)
         form.text_data.data = do_pipeline(form.text_data.data, form.coders.data)
     return render_template('coder.html',
                            title='Coder',
