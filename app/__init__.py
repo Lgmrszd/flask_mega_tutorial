@@ -1,8 +1,7 @@
 from flask import Flask
-__version__ = "0.1"
-
+from config import Config
 
 app = Flask(__name__)
-app.config.from_object('app.config')
+app.config.from_object(Config)
 
 from app import routes

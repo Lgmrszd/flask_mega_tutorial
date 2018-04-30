@@ -1,4 +1,4 @@
-from app import app, __version__
+from app import app
 from flask import render_template, flash, redirect, g
 from app.forms import LoginForm
 
@@ -6,8 +6,7 @@ from app.forms import LoginForm
 @app.route('/')
 @app.route('/index')
 def index():
-    return render_template("index.html",
-                           version=__version__)
+    return render_template("index.html")
 
 
 @app.route('/login', methods=['GET', 'POST'])
